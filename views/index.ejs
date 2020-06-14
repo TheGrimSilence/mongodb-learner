@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Star Wars Quote App</title>
+  </head>
+  <body>
+    <div>
+      <h1>May the Schwartz be with you!</h1>
+
+      <form action="/quotes" method="POST">
+        <input type="text" name="name" />
+        <input type="text" name="quote" />
+        <button type="submit">Submit</button>
+      </form>
+      <ul class="quotes">
+        <% quotes.forEach(quote => { %>
+        <li class="quote">
+          <span><%= quote.name %></span>
+          <span><%= quote.quote %></span>
+        </li>
+        <% }) %>
+      </ul>
+    </div>
+    <div>
+      <h2>Darth Vader Invades!</h2>
+      <p>Replace first Yoda's quote with a quote written by Darth Vader</p>
+      <button id="update">Replace Yoda's Quote</button>
+    </div>
+    <div>
+      <h2>Remove Darth Vader!</h2>
+      <p>
+        Delete one of Darth Vader's quotes.
+        <em>Does nothing if no quotes of his are found.</em>
+      </p>
+      <div id="delete-failed">ERR!: No Darth Vader qoutes exist!</div>
+      <button id="delete">Delete 1 Quote</button>
+    </div>
+    <script src="/main.js" defer></script>
+  </body>
+</html>
